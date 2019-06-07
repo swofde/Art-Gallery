@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Salience.FluentApi</name>
+    </assembly>
+    <members>
+        <member name="M:Salience.FluentApi.IFluentClient.SetAuthenticator(RestSharp.IAuthenticator)">
+            <summary>
+            Sets the requests authenticator.
+            </summary>
+            <param name="authenticator">A RestSharp authenticator</param>
+            <returns>This client. Useful for chaining operations.</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IFluentClient.AddTrace(Salience.FluentApi.ITraceWriter)">
+            <summary>
+            Registers a trace writer to use for tracing requests and responses.
+            </summary>
+            <param name="traceWriter">The new trace writer</param>
+            <returns>This client. Useful for chaining operations.</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IFluentClient.RemoveTrace(Salience.FluentApi.ITraceWriter)">
+            <summary>
+            Unregisters a trace writer.
+            </summary>
+            <param name="traceWriter">The trace writer to remove</param>
+            <returns>This client. Useful for chaining operations.</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IFluentClient.To(System.String)">
+            <summary>
+            Initializes a new request by describing what it does.
+            This description will appear in the traces.
+            </summary>
+            <param name="operation">The operation being performed by the request, e.g. "update a status"</param>
+            <returns></returns>
+        </member>
+        <member name="P:Salience.FluentApi.IFluentClient.Serializer">
+            <summary>
+            The JSON serializer used to serialize request bodies and deserialize response bodies.
+            </summary>
+        </member>
+        <member name="M:Salience.FluentApi.IEmptyRequest.To(System.String)">
+            <summary>
+            Initializes a new request by describing what it does.
+            This description will appear in the traces.
+            </summary>
+            <param name="operation">The operation being performed by the request, e.g. "update a status"</param>
+            <returns></returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithOperation.Get(System.String)">
+            <summary>
+            Indicates that the specified resource shall be accessed with the GET method.
+            </summary>
+            <param name="resourcePath">The resource to access</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithOperation.Get(System.String,System.Action{RestSharp.RestRequest})">
+            <summary>
+            Indicates that the specified resource shall be accessed with the GET method.
+            </summary>
+            <param name="resourcePath">The resource to access</param>
+            <param name="requestCustomizer">A method to customize the RestSharp request</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithOperation.Post(System.String)">
+            <summary>
+            Indicates that the specified resource shall be accessed with the POST method.
+            </summary>
+            <param name="resourcePath">The resource to access</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithOperation.Post(System.String,System.Action{RestSharp.RestRequest})">
+            <summary>
+            Indicates that the specified resource shall be accessed with the POST method.
+            </summary>
+            <param name="resourcePath">The resource to access</param>
+            <param name="requestCustomizer">A method to customize the RestSharp request</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithOperation.Put(System.String)">
+            <summary>
+            Indicates that the specified resource shall be accessed with the PUT method.
+            </summary>
+            <param name="resourcePath">The resource to access</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithOperation.Put(System.String,System.Action{RestSharp.RestRequest})">
+            <summary>
+            Indicates that the specified resource shall be accessed with the PUT method.
+            </summary>
+            <param name="resourcePath">The resource to access</param>
+            <param name="requestCustomizer">A method to customize the RestSharp request</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithOperation.Delete(System.String)">
+            <summary>
+            Indicates that the specified resource shall be accessed with the DELETE method.
+            </summary>
+            <param name="resourcePath">The resource to access</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithOperation.Delete(System.String,System.Action{RestSharp.RestRequest})">
+            <summary>
+            Indicates that the specified resource shall be accessed with the DELETE method.
+            </summary>
+            <param name="resourcePath">The resource to access</param>
+            <param name="requestCustomizer">A method to customize the RestSharp request</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IExecutableRequest.Execute">
+            <summary>
+            Executes the request synchronously.
+            </summary>
+        </member>
+        <member name="M:Salience.FluentApi.IExecutableRequest.ExecuteAsync">
+            <summary>
+            Executes the request asynchronously.
+            </summary>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithUrl.Expecting(System.Net.HttpStatusCode,System.Net.HttpStatusCode[])">
+            <summary>
+            Specifies the status code to expect as response.
+            </summary>
+            <param name="expectedStatusCode">The expected response status code</param>
+            <param name="otherAcceptedStatusCodes">Other accepted status code as response</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithUrl.Expecting``1">
+            <summary>
+            Specifies the type of the expected response body.
+            </summary>
+            <typeparam name="T">The type of the expected response body</typeparam>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithUrl.Expecting``2(System.Func{``0,``1})">
+            <summary>
+            Specifies how the request result should be inferred from the response body.
+            </summary>
+            <typeparam name="TResponse">The type of the expected response body</typeparam>
+            <typeparam name="TResult">The type of the result to get from the response</typeparam>
+            <param name="resultGetter">How to infer the request result from the response body</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithMethod.UsingBase(System.String)">
+            <summary>
+            Specifies the base path to use for the specified ressource.
+            </summary>
+            <param name="otherBaseApiPath">The API base to use</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithExpectedStatus.WithRawContent">
+            <summary>
+            Specifies that the request result should be the raw string content received.
+            </summary>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithExpectedStatus.WithContent``1">
+            <summary>
+            Specifies the type of the expected response body.
+            </summary>
+            <typeparam name="T">The type of the expected response body</typeparam>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithExpectedStatus.WithContent``2(System.Func{``0,``1})">
+            <summary>
+            Specifies how the request result should be inferred from the response body.
+            </summary>
+            <typeparam name="TResponse">The type of the expected response body</typeparam>
+            <typeparam name="TResult">The type of the result to get from the response</typeparam>
+            <param name="resultGetter">How to infer the request result from the response body</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IExecutableRequest`1.Execute">
+            <summary>
+            Executes the request synchronously.
+            </summary>
+            <returns>The deserialized response body</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IExecutableRequest`1.ExecuteAsync">
+            <summary>
+            Executes the request asynchronously.
+            </summary>
+            <returns>The deserialized response body</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithContent`1.OrDefaultIfNotFound">
+            <summary>
+            Specifies a default result for the request when receiving a 404 - NotFound response
+            </summary>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithContent`1.Or(`0)">
+            <summary>
+            Specifies an alternate result for the request
+            </summary>
+            <param name="alternateResult">The alternate result</param>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithAlternateResult`1.If(System.Net.HttpStatusCode,System.Net.HttpStatusCode[])">
+            <summary>
+            Return the alternate result when receiving a 404 - NotFound response
+            </summary>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithAlternateResult`1.IfNotFound">
+            <summary>
+            Return the alternate result when receiving a 404 - NotFound response
+            </summary>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.IRequestWithAlternateResult`1.IfNoContent">
+            <summary>
+            Return the alternate result when receiving a 204 - NoContent response
+            </summary>
+            <returns>This request</returns>
+        </member>
+        <member name="M:Salience.FluentApi.ITraceWriter.Trace(Salience.FluentApi.TraceLevel,System.String,System.Exception)">
+            <summary>
+            Writes a trace message.
+            </summary>
+        </member>
+    </members>
+</doc>
